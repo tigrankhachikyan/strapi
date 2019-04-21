@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args: 
-        node_env: development
+        environment: development
     image: khachikyan/strapi
     environment:
       - APP_NAME=strapi
@@ -23,7 +23,6 @@ services:
       - 1337:1337
     volumes:
       - ./strapi:/usr/src/api/strapi
-      - /usr/src/api/strapi/node_modules/
     depends_on:
       - db
     restart: always
