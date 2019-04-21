@@ -8,11 +8,9 @@ RUN npm install pm2 -g
 COPY . /usr/src/api/
 
 ENV NODE_ENV=$node_env
-RUN chmod +x /usr/src/api/strapi.sh \
-    && /usr/src/api/strapi.sh
 
-WORKDIR /usr/src/api/strapi
+WORKDIR /usr/src/api
 
-CMD ["npm", "start"]
+CMD ["sh", "/usr/src/api/strapi.sh"]
 
 EXPOSE 1337
